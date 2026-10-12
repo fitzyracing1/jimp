@@ -10,7 +10,8 @@
     "es",
     "index.d.ts",
     "fonts",
-    "types"
+    "types",
+    "PATCH-CLOUD.md"
   ],
   "repository": "jimp-dev/jimp",
   "engines": {
@@ -141,5 +142,15 @@
   "publishConfig": {
     "access": "public"
   },
-  "module": "./dist/esm/index.js"
+  "module": "./dist/esm/index.js",
+  "_patchCloud": {
+    "fork": "https://github.com/fitzyracing1/jimp",
+    "branch": "patch-cloud",
+    "upstream": "https://github.com/jimp-dev/jimp",
+    "upstreamIssue": "https://github.com/jimp-dev/jimp/issues/1402",
+    "baseRef": "tag v1.6.1",
+    "upstreamVersion": "1.6.1",
+    "fix": "Ship the real Rollup browser bundle in dist/browser/index.js (and its index.d.ts) instead of the 98-byte stub published in jimp@1.6.1, so bundlers that resolve the \"browser\" export condition get Jimp, ResizeStrategy, etc.",
+    "details": "See PATCH-CLOUD.md in this package."
+  }
 }
